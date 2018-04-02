@@ -49,8 +49,8 @@
             </div>
             <div class="col s12 l6">
                 <div class="share">
-                    <a class="btn right" href="#">Copy</a>
-                    <span th:text="'http://gif.fy/' + ${gif.name}">URL</span>
+                    <a class="btn right" href="#" onclick="copyToClipboard('#s1')">Copy</a>
+                    <span id="s1" th:text="'http://gif.fy/' + ${gif.name}">URL</span>
                 </div>
             </div>
         </div>
