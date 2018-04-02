@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" th:href="@{/favicon.png}" />
+
+    <link rel="stylesheet" th:href="@{/vendor/materialize/css/materialize.css}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" th:href="@{/app.css}" />
+
+    <title>giflib | Home</title>
+</head>
+<body>
+<div id="wrapper">
+<div th:include="fragments/fragments :: menu"></div>
+
+    <div class="search-bar container">
+        <div class="row">
+            <div class="col s12">
+                <form action="/home/search" method="get">
+                    <div class="input-field">
+                        <input name="name" type="search" placeholder="Wyszukiwanie..." required="required" autocomplete="off"/>
+                        <input class="material-icons" type="submit" value="search"/>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="gifs container">
+        <p th:text="${message}"/>
+
+        <div class="row">
+            <tr th:each="gif: ${gifs}">
+                <a th:href="@{'/gif/' + ${gif.name}}" >
+            <img class="col sl2 l4" th:src="${gif.getGifPath()}"/>
+                </a>
+            </tr>
+        </div>
+    </div>
+
+<script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
+<script th:src="@{/vendor/materialize/js/materialize.js}"></script>
+<script th:src="@{/app.js}"></script>
+</div>
+</body>
+<div th:include="fragments/fragments :: footer"></div>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrapper">
+<div th:fragment="menu" >
+    <div class="navbar-fixed">
+        <nav>
+            <div class="container">
+                <a th:href="@{/}" class="brand-logo">gif<span>.</span>lib</a>
+                <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a th:href="@{/}">Explore</a></li>
+                    <li class="active"><a th:href="@{/categories}">Categories</a></li>
+                    <li><a th:href="@{/favorites}">Favorites</a></li>
+                </ul>
+                <ul id="mobile-nav" class="side-nav">
+                    <li><a th:href="@{/}">Explore</a></li>
+                    <li class="active"><a th:href="@{/categories}">Categories</a></li>
+                    <li><a th:href="@{/favorites}">Favorites</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+</div>
+<footer>
+    <div th:fragment="footer">
+        <div class="footer">
+            <nav>
+                <div class="footer">
+                    <a th:href="@{/}" class="brand-logo">gif<span>.</span>lib</a>
+                    <a href="#" data-activates="mobile-nav" class="button-collapse right"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
